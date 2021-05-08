@@ -1,0 +1,19 @@
+For(Opportunity p : Trigger.New){
+
+List<Account> acc = [Select Id, CustomField__c FROM Account where id=:p.AccountId];
+if(p.CloseDate < TODAY()){
+p.StageName=’Closed’;
+p.RecordType=’renewal’;
+
+}
+p.CustomField__c= acc.CustomField__c;
+}
+
+
+Issues with Trigger – 
+
+1.	 TODAY() – not a valid method – Should be updated to System.TODAY()
+2.	RecodType – Should be a Id and not name - 
+   RecordType rt = [SELECT Id FROM RecordType WHERE SObjectType='Opportunity' AND Name=’renewal’ LIMIT 1];
+            p.RecordTypeId =  rt.Id;
+3.	acc.CustomField__c; - Need to interate through the list --- acc[0].CustomField__c

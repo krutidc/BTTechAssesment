@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Minutes_Spent__c</fullName>
+    <description>Minutes spent on the Event.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Minutes spent on the Event.</inlineHelpText>
+    <label>Minutes Spent</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
